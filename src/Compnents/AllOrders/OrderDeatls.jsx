@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
+
 import { Link, useParams } from "react-router-dom";
 import DateObject from "react-date-object";
-import { Helmet } from 'react-helmet';
+import { Helmet } from "react-helmet";
 
 export default function OrderDeatls() {
   const [getOrderDeatls, setGetOrderDeatls] = useState([]);
@@ -40,9 +42,9 @@ export default function OrderDeatls() {
   return (
     <>
       <Helmet>
-                <meta charSet="utf-8" />
-                <title>order info</title>
-            </Helmet>
+        <meta charSet="utf-8" />
+        <title>order info</title>
+      </Helmet>
       {Loader ? (
         <div className="justify-center flex  items-center h-screen">
           <span class="loader"></span>

@@ -114,12 +114,12 @@ export default function Brand() {
                   <span class="loader"></span>
                 </div>
               ) : (
-                <div className="relative rounded   max-h-full">
-                  <div className="relative  rounded-lg shadow-sm ">
-                    <div>
+                <div className="relative rounded-lg  bg-white  max-h-full">
+                  <div className="relative   rounded-lg shadow-sm ">
+                    <div className="">
                       <img
                         src={getBrandID?.image}
-                        className="w-full h-[400px] rounded-t-md  object-contain  "
+                        className="w-full h-[400px]  rounded-t-md  object-contain  "
                         alt={getBrandID?.name}
                       />
                       <h3 className="text-center p-4  bg-white rounded-b-xl text-3xl text-mainColor">

@@ -34,9 +34,9 @@ export default function Navbar() {
   console.log("render");
 
 
-  // function mouseEnter() {
-  //   initFlowbite();
-  // }
+  function mouseEnter() {
+    initFlowbite();
+  }
 
   function logOut() {
     localStorage.removeItem("token");
@@ -84,7 +84,7 @@ export default function Navbar() {
                   <li className="ps-3 self-center hover:text-mainColor">
                     <NavLink
                       to="wishList"
-                      className="block py-2 relative  hover:text-green-700  px-3 md:p-0  rounded  pe-5 md:border-0  dark:text-white md:dark:hover:text-green-500 dark:hover:bg-gray-700  md:dark:hover:bg-transparent"
+                      className="block py-2 relative  hover:text-green-700  px-3 md:p-0  rounded  pe-5 md:border-0     "
                     >
                       wishList{" "}
                       <i
@@ -110,9 +110,11 @@ export default function Navbar() {
             <div className=" ">
               {" "}
               <button
+                                     onClick={mouseEnter}
+
                 data-collapse-toggle="navbar-user"
                 type="button"
-                className="inline-flex   items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                className="inline-flex   items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200  "
                 aria-controls="navbar-user"
                 aria-expanded="false"
               >
@@ -141,7 +143,7 @@ export default function Navbar() {
                     <button
                       // onFocus={mouseEnter}
                       type="button"
-                      className="focus:shadow-inner me-3 focus:shadow-green-200 text-sm  hidden  md:block   border-[4px] border-mainColor   bg-white  rounded-full md:me-0  dark:focus:ring-gray-600"
+                      className="focus:shadow-inner me-3 focus:shadow-green-200 text-sm  hidden  md:block   border-[4px] border-mainColor   bg-white  rounded-full md:me-0  "
                       id="user-menu-button"
                       aria-expanded="false"
                       data-dropdown-toggle="user-dropdown"
@@ -156,7 +158,7 @@ export default function Navbar() {
                     {/* Dropdown menu */}
                     <div className="md:block hidden">
                       <div
-                        className={`z-50 hidden  my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-gray-700 dark:divide-gray-600`}
+                        className={`z-50 hidden  my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm `}
                         id="user-dropdown"
                       >
                         <div className="px-6 py-3 ">
@@ -231,7 +233,7 @@ export default function Navbar() {
                 <li>
                   <NavLink
                     to="proudct"
-                    className="block py-2 px-3 md:p-0 text-gray-900 rounded  md:hover:bg-transparent md:border-0 hover:text-green-700 dark:text-white md:dark:hover:text-green-500 dark:hover:bg-gray-700  md:dark:hover:bg-transparent"
+                    className="block py-2 px-3 md:p-0 text-gray-900 rounded  md:hover:bg-transparent md:border-0 hover:text-green-700 "
                   >
                     Product
                   </NavLink>
@@ -240,7 +242,7 @@ export default function Navbar() {
                 <li>
                   <NavLink
                     to="category"
-                    className="block py-2 px-3 md:p-0 text-gray-900 rounded  md:hover:bg-transparent md:border-0 hover:text-green-700 dark:text-white md:dark:hover:text-green-500 dark:hover:bg-gray-700  md:dark:hover:bg-transparent"
+                    className="block py-2 px-3 md:p-0 text-gray-900 rounded  md:hover:bg-transparent md:border-0 hover:text-green-700"
                   >
                     Category
                   </NavLink>
@@ -248,7 +250,7 @@ export default function Navbar() {
                 <li>
                   <NavLink
                     to="brands"
-                    className="block py-2 px-3 md:p-0 text-gray-900 rounded  md:hover:bg-transparent md:border-0 hover:text-green-700 dark:text-white md:dark:hover:text-green-500 dark:hover:bg-gray-700  md:dark:hover:bg-transparent"
+                    className="block py-2 px-3 md:p-0 text-gray-900 rounded  md:hover:bg-transparent md:border-0 hover:text-green-700 "
                   >
                     Brands
                   </NavLink>
@@ -256,7 +258,7 @@ export default function Navbar() {
                 <li className=" block  md:hidden self-center my-2 ">
                   <NavLink
                     to="wishList"
-                    className=" py-2 relative  inline  px-3 md:p-0 text-gray-900 rounded  pe-5 md:border-0 hover:text-green-700 dark:text-white md:dark:hover:text-green-500 dark:hover:bg-gray-700  md:dark:hover:bg-transparent"
+                    className=" py-2 relative  inline  px-3 md:p-0 text-gray-900 rounded  pe-5 md:border-0 hover:text-green-700 "
                   >
                     wishList <i class="fa-solid fa-heart  me-1"></i>
                     <span className="absolute text-white md:left-[65px] md:bottom-3 left-[80px]  bottom-5 bg-mainColor inline-flex justify-center items-center p-3   w-[13px]  h-[13px] rounded-2xl ">
@@ -267,7 +269,7 @@ export default function Navbar() {
                 <li className="block md:hidden my-2   ">
                   <NavLink
                     to="cart"
-                    className=" py-2 relative  inline px-3 md:p-0 text-gray-900 rounded pe-5 md:border-0 hover:text-green-700 dark:text-white md:dark:hover:text-green-500 dark:hover:bg-gray-700  md:dark:hover:bg-transparent"
+                    className=" py-2 relative  inline px-3 md:p-0 text-gray-900 rounded pe-5 md:border-0 hover:text-green-700 "
                   >
                     Cart <i className="fa-solid fa-cart-shopping  relative"></i>
                     <span className="absolute text-white   -top-2 right-1   bg-mainColor inline-flex justify-center items-center p-3 w-[13px] h-[13px] rounded-2xl">
@@ -280,9 +282,8 @@ export default function Navbar() {
                   <div className=" flex  justify-center  ">
                     <div className="flex items-center justify-center    ">
                       <button
-                        // onFocus={mouseEnter}
                         type="button"
-                        className="focus:shadow-inner  focus:shadow-green-200 text-sm        border-[4px] border-mainColor   bg-white  rounded-full  dark:focus:ring-gray-600 "
+                        className="focus:shadow-inner  focus:shadow-green-200 text-sm        border-[4px] border-mainColor   bg-white  rounded-full   "
                         id="user-menu-button"
                         aria-expanded="false"
                         data-dropdown-toggle="user-dropdown2"
@@ -297,7 +298,7 @@ export default function Navbar() {
                       {/* Dropdown menu */}
                       <div className="md:hidden block">
                         <div
-                          className={`z-50 hidden  my-4 text-base list-none text-left bg-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-gray-700 dark:divide-gray-600`}
+                          className={`z-50 hidden  my-4 text-base list-none text-left bg-white divide-y divide-gray-100 rounded-lg shadow-sm `}
                           id="user-dropdown2"
                         >
                           <div className="px-6 py-3 ">

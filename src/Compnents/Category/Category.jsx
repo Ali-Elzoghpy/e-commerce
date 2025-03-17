@@ -115,7 +115,7 @@ export default function Category() {
                     <div>
                       <img
                         src={getCategoryID?.image}
-                        className="w-full h-[400px] rounded-t-md  object-contain  "
+                        className="w-full h-[400px] rounded-t-md  object-cover  "
                         alt={getCategoryID?.name}
                       />
                       <h3 className="text-center p-4  bg-white rounded-b-xl text-3xl text-mainColor">
