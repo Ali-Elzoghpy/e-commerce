@@ -69,7 +69,7 @@ export default function CatSlider() {
       <div key={img._id} className="p-2">
         <img
           src={img.image}
-          className="w-full h-48 object-cover object-top"
+          className="w-full h-48 object-contain md:object-cover object-top"
           alt={img.name}
         />
         <h3 className="text-center mt-2">{img.name}</h3>
