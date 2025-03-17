@@ -35,8 +35,8 @@ export default function CatSlider() {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          dots: true
-        }
+          dots: true,
+        },
       },
       {
         breakpoint: 600,
@@ -44,39 +44,39 @@ export default function CatSlider() {
           slidesToShow: 2,
           slidesToScroll: 2,
           initialSlide: 2,
-          dots: false
-
-
-        }
+          dots: false,
+        },
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          dots: false
-        }
-      }
-    ]
+          dots: false,
+        },
+      },
+    ],
   };
 
   return (
     <div className="my-10">
-      <h2 className="my-3 text-3xl font-light text-mainColor">Shop poupler Categoties</h2>
+      <h2 className="my-3 text-3xl font-light text-mainColor">
+        Shop poupler Categoties
+      </h2>
       <Slider {...settings}>
-  {catImg.map((img) => {
-    return (
-      <div key={img._id} className="p-2">
-        <img
-          src={img.image}
-          className="w-full h-48 object-contain md:object-cover object-top"
-          alt={img.name}
-        />
-        <h3 className="text-center mt-2">{img.name}</h3>
-      </div>
-    );
-  })}
-</Slider>
+        {catImg.map((img) => {
+          return (
+            <div key={img._id} className="p-2">
+              <img
+                src={img.image}
+                className="w-full h-48   object-contain object-center"
+                alt={img.name}
+              />
+              <h3 className="text-center mt-2">{img.name}</h3>
+            </div>
+          );
+        })}
+      </Slider>
     </div>
   );
 }

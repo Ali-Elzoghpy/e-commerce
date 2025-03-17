@@ -42,6 +42,7 @@ export default function MainSlider() {
     autoplaySpeed: 3000,
 
     arrows: false,
+
     responsive: [
       {
         breakpoint: 1024,
@@ -59,7 +60,6 @@ export default function MainSlider() {
           slidesToScroll: 2,
           initialSlide: 2,
           dots: false,
-
         },
       },
       {
@@ -68,13 +68,10 @@ export default function MainSlider() {
           slidesToShow: 1,
           slidesToScroll: 1,
           dots: false,
-
         },
       },
     ],
   };
-
-let claass= "text-center"
 
   return (
     <>
