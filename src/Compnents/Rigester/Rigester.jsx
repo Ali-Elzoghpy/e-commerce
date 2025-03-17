@@ -63,7 +63,8 @@ export default function Rigester() {
 
   return (
     <>
-      <div className="container mx-auto w-7/12 ">
+    <div className="mt-10 h-[75vh] ">
+      <div className="container mx-auto w-7/12  ">
        {!(rigesterFormik.isValid) && !rigesterFormik.dirty   ?  (
           <p className="text-center text-red-900">not vaalid</p>
         ) : (
@@ -192,6 +193,8 @@ export default function Rigester() {
           </div>
         </form>
       </div>
+      
+</div>
     </>
   );
 }

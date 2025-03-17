@@ -1,2 +1,77 @@
 @tailwind base;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@100;200;300;400;500;600;700;800;900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+.row{
+    @apply flex flex-wrap items-center 
+}
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid green ;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    }
+
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    } 
+    .loader1 {
+        width: 20px;
+        height: 20px;
+        border: 5px solid white ;
+        border-bottom-color: transparent;
+        border-radius: 50%;
+        display: inline-block;
+        box-sizing: border-box;
+        animation: rotation 1s linear infinite;
+        
+        }
+        input[type="radio"]{
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            outline: none;
+            background-color: white;
+            cursor: pointer;
+            position: relative;
+            border: 0.2px solid rgba(0, 0, 0, 0.3);
+        
+            
+        }
+        input[type="radio"]:checked {
+            background-color: #0AAD0A;
+        }
+        input[type="radio"]::after{
+            content: "";
+            background-color: white;
+            width: 7px;
+            height: 7px;
+position: absolute;          
+top: 3.5px;
+right: 3.6px;
+border-radius: 50%;
+          
+          
+            
+        }
+        .loader2 {
+            width: 20px;
+            height: 20px;
+            border: 5px solid #0AAD0A  ;
+            border-bottom-color: transparent;
+            border-radius: 50%;
+            display: inline-block;
+            box-sizing: border-box;
+            animation: rotation 1s linear infinite;
+            
+            }
