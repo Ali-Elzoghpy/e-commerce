@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ToastContainer } from "react-toastify";
 import { toast } from "react-toastify";
 import { cartContext } from "./../Context/CartContext";
+import { Helmet } from 'react-helmet';
 
 export default function WishList() {
   const [wishData, setwishData] = useState(null);
@@ -72,6 +73,11 @@ export default function WishList() {
   }, []);
   return (
     <>
+      <Helmet>
+                <meta charSet="utf-8" />
+                <title>WishLIst</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
       {Loader ? (
         <div className="justify-center flex  items-center h-screen">
           <span class="loader"></span>

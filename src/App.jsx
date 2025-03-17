@@ -24,6 +24,7 @@ import Update from "./Compnents/Update/Update";
 import ChangePassword from "./Compnents/change-password/ChangePassword";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import NotFound from './Compnents/NotFound/NotFound.jsx';
 
 function App() {
   const route = createBrowserRouter([
@@ -150,14 +151,19 @@ function App() {
             </ProutectedRoute>
           ),
         },
+
+        {
+          path: "*",
+          element: <NotFound/>,
+        },
       ],
     },
   ]);
 
   return (
     <>
-          <ToastContainer />
-    
+      <ToastContainer />
+
       <WishLIstContextProvider>
         <CartContextProvider>
           <AuthContextProvider>

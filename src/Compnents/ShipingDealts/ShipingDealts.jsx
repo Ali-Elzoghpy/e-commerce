@@ -5,6 +5,7 @@ import * as yup from "yup";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { cartContext } from "../Context/CartContext";
+import { Helmet } from "react-helmet";
 
 export default function ShipingDealts() {
   let [loadingSpiner, setLoading] = useState(true);
@@ -100,102 +101,111 @@ export default function ShipingDealts() {
   }
 
   return (
-    <div className="my-7 h-[73vh]">
-      <h1 className="mb-5">ShipingDealts</h1>
+    <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Shiping Dealts</title>
+      </Helmet>
+      <div className="my-7 h-[73vh]">
+        <h1 className="mb-5">ShipingDealts</h1>
 
-      <form onSubmit={shipingFormick.handleSubmit}>
-        <div className="mb-3">
-          <input
-            value={shipingFormick.values.details}
-            onChange={shipingFormick.handleChange}
-            onBlur={shipingFormick.handleBlur}
-            name="details"
-            type="text"
-            className=" border w-full  p-1 focus:outline-none "
-            placeholder="your deatls"
-          />
-          {shipingFormick.errors.details && shipingFormick.touched.details ? (
-            <p className="text-red-700 mb-3 ">
-              {shipingFormick.errors.details}{" "}
-            </p>
-          ) : (
-            ""
-          )}
-        </div>
-        <div className="my-5">
-          <input
-            value={shipingFormick.values.phone}
-            onChange={shipingFormick.handleChange}
-            onBlur={shipingFormick.handleBlur}
-            name="phone"
-            type="tel"
-            className=" border w-full  p-1 focus:outline-none "
-            placeholder="phone num"
-          />
-          {shipingFormick.errors.phone && shipingFormick.touched.phone ? (
-            <p className="text-red-700 mb-3 ">
-              {" "}
-              {shipingFormick.errors.phone}{" "}
-            </p>
-          ) : (
-            ""
-          )}
-        </div>
-        <div className="mb-3">
-          <input
-            value={shipingFormick.values.city}
-            onChange={shipingFormick.handleChange}
-            onBlur={shipingFormick.handleBlur}
-            name="city"
-            type="text"
-            className=" border w-full  p-1 focus:outline-none "
-            placeholder="city"
-          />
-          {shipingFormick.errors.city && shipingFormick.touched.city ? (
-            <p className="text-red-700 mb-3 "> {shipingFormick.errors.city} </p>
-          ) : (
-            ""
-          )}
-        </div>
-        <div className="my-4 flex space-x-2 items-center">
-          <label htmlFor="visaPay" className="text-lg font-light">
-            pay with visa{" "}
-          </label>
-          <input
-            className="ms-3"
-            type="radio"
-            onClick={getChekedRadio}
-            id="visaPay"
-            name="radios"
-            value="visa"
-          />
+        <form onSubmit={shipingFormick.handleSubmit}>
+          <div className="mb-3">
+            <input
+              value={shipingFormick.values.details}
+              onChange={shipingFormick.handleChange}
+              onBlur={shipingFormick.handleBlur}
+              name="details"
+              type="text"
+              className=" border w-full  p-1 focus:outline-none "
+              placeholder="your deatls"
+            />
+            {shipingFormick.errors.details && shipingFormick.touched.details ? (
+              <p className="text-red-700 mb-3 ">
+                {shipingFormick.errors.details}{" "}
+              </p>
+            ) : (
+              ""
+            )}
+          </div>
+          <div className="my-5">
+            <input
+              value={shipingFormick.values.phone}
+              onChange={shipingFormick.handleChange}
+              onBlur={shipingFormick.handleBlur}
+              name="phone"
+              type="tel"
+              className=" border w-full  p-1 focus:outline-none "
+              placeholder="phone num"
+            />
+            {shipingFormick.errors.phone && shipingFormick.touched.phone ? (
+              <p className="text-red-700 mb-3 ">
+                {" "}
+                {shipingFormick.errors.phone}{" "}
+              </p>
+            ) : (
+              ""
+            )}
+          </div>
+          <div className="mb-3">
+            <input
+              value={shipingFormick.values.city}
+              onChange={shipingFormick.handleChange}
+              onBlur={shipingFormick.handleBlur}
+              name="city"
+              type="text"
+              className=" border w-full  p-1 focus:outline-none "
+              placeholder="city"
+            />
+            {shipingFormick.errors.city && shipingFormick.touched.city ? (
+              <p className="text-red-700 mb-3 ">
+                {" "}
+                {shipingFormick.errors.city}{" "}
+              </p>
+            ) : (
+              ""
+            )}
+          </div>
+          <div className="my-4 flex space-x-2 items-center">
+            <label htmlFor="visaPay" className="text-lg font-light">
+              pay with visa{" "}
+            </label>
+            <input
+              className="ms-3"
+              type="radio"
+              onClick={getChekedRadio}
+              id="visaPay"
+              name="radios"
+              value="visa"
+            />
 
-          <label htmlFor="cashPay" className="text-lg font-light">
-            pay cash{" "}
-          </label>
-          <input
-            className="ms-3"
-            onClick={getChekedRadio}
-            type="radio"
-            id="cashPay"
-            name="radios"
-            value="cash"
-          />
-        </div>
-        <button
-          disabled={
-            !(
-              shipingFormick.isValid &&
-              shipingFormick.dirty &&
-              clikedOption !== ""
-            )
-          }
-          type="submit"
-          className="bg-mainColor rounded p-1 text-white mt-3  disabled:bg-opacity-20  d-bl"
-        >
-          {loadingSpiner ? "Submit" : <i class="fas fa-spinner fa-spin"></i>}
-        </button>
-      </form>
-    </div>
+            <label htmlFor="cashPay" className="text-lg font-light">
+              pay cash{" "}
+            </label>
+            <input
+              className="ms-3"
+              onClick={getChekedRadio}
+              type="radio"
+              id="cashPay"
+              name="radios"
+              value="cash"
+            />
+          </div>
+          <button
+            disabled={
+              !(
+                shipingFormick.isValid &&
+                shipingFormick.dirty &&
+                clikedOption !== ""
+              )
+            }
+            type="submit"
+            className="bg-mainColor rounded p-1 text-white mt-3  disabled:bg-opacity-20  d-bl"
+          >
+            {loadingSpiner ? "Submit" : <i class="fas fa-spinner fa-spin"></i>}
+          </button>
+        </form>
+      </div>
+    </>
   );
 }

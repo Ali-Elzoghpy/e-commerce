@@ -4,6 +4,7 @@ import axios from "axios";
 import { useContext } from "react";
 import { contextAuth } from "./../Context/AuthContextProvider";
 import { Link } from "react-router-dom";
+import { Helmet } from 'react-helmet';
 export default function AllOrders() {
   let [getAllorderList, setAllOrdersList] = useState(null);
   const [Loader, setLoader] = useState(null);
@@ -37,6 +38,11 @@ export default function AllOrders() {
 
   return (
     <>
+      <Helmet>
+                <meta charSet="utf-8" />
+                <title>orders</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
       {Loader ? (
         <div className="justify-center flex  items-center h-screen">
           <span class="loader"></span>

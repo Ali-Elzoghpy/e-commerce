@@ -3,6 +3,7 @@ import { cartContext } from "./../Context/CartContext";
 import { useState } from "react";
 import img from "../../assets/hand-drawn-no-data-illustration_23-2150570252.jpg";
 import { Link, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 export default function Cart() {
   let {
@@ -13,7 +14,6 @@ export default function Cart() {
     deleteSpacificItem,
     deletAllCart,
     getcartNumber,
-
   } = useContext(cartContext);
   const [cartData, setCartData] = useState(null);
   const [Loader, setLoader] = useState(null);
@@ -50,8 +50,8 @@ export default function Cart() {
     deleteSpacificItem(id)
       .then((res) => {
         setLoader(false);
-        getcartNumber()
-        getcartNumber()
+        getcartNumber();
+        getcartNumber();
 
         setCartData(res.data);
       })
@@ -62,7 +62,7 @@ export default function Cart() {
   function deleAll() {
     deletAllCart()
       .then((res) => {
-        getcartNumber()
+        getcartNumber();
         navgite("/");
       })
       .catch(() => {});
@@ -74,12 +74,20 @@ export default function Cart() {
   console.log(cartData);
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Cart</title>
+      </Helmet>
       {Loader ? (
         <div className="justify-center flex  items-center h-screen">
           <span class="loader"></span>
         </div>
       ) : cartData?.data?.products.length > 0 ? (
-        <div className={` ${cartData?.data?.products.length < 2 ? `h-screen` : ""}    p-10 mt-4 rounded-lg relative`}>
+        <div
+          className={` ${
+            cartData?.data?.products.length < 2 ? `h-screen` : ""
+          }    p-10 mt-4 rounded-lg relative`}
+        >
           <h1 className="text-3xl font-light ">Shop Cart : </h1>
           <div className="row bg justify-between my-4 ">
             <div>
@@ -111,7 +119,13 @@ export default function Cart() {
                 <div className="row w-10/12  justify-between ">
                   <div className="w-7/12 ">
                     <h3 className="text-slate-800">
-                     <span className=""> {proudct.product.title.split(" ").slice(0,15).join(" ")}</span>
+                      <span className="">
+                        {" "}
+                        {proudct.product.title
+                          .split(" ")
+                          .slice(0, 15)
+                          .join(" ")}
+                      </span>
                     </h3>
                     <h4 className="text-mainColor my-4">
                       {" "}
@@ -162,7 +176,6 @@ export default function Cart() {
           >
             Chekouat <i class="fa-regular fa-credit-card"></i>{" "}
           </Link>
-       
         </div>
       ) : (
         <div className="mx-auto h-screen w-[50%] mt-10">

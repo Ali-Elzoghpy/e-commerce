@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import { cartContext } from "./../Context/CartContext";
 import { useContext } from "react";
 import { toast, ToastContainer } from "react-toastify";
+import { Helmet } from 'react-helmet';
 
 export default function ProudectDeatls() {
   let [proudctDeatls, setProudctDeatls] = useState(null);
@@ -81,6 +82,11 @@ export default function ProudectDeatls() {
 
   return (
     <>
+      <Helmet>
+                <meta charSet="utf-8" />
+                <title>Proudect Deatls</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
 
       {Loader ? (
         <div className="justify-center flex  items-center h-screen">

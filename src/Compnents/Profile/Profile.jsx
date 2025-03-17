@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { contextAuth } from "./../Context/AuthContextProvider";
+import { Helmet } from "react-helmet";
 
 export default function Profile() {
   const [getUserInfo, setgetUserInfo] = useState(null);
@@ -37,6 +38,10 @@ export default function Profile() {
 
   return (
     <>
+      <Helmet>
+                <meta charSet="utf-8" />
+                <title>Profile</title>
+            </Helmet>
       {Loader ? (
         <div className="justify-center flex  items-center h-screen">
           <span class="loader"></span>

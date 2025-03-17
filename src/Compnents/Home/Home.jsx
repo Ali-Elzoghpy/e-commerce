@@ -5,6 +5,7 @@ import ProudctDisplay from "./../ProudctDisplay/ProudctDisplay";
 import { toast, ToastContainer } from "react-toastify";
 import { useLocation } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
+import { Helmet } from "react-helmet";
 
 export default function Home() {
   let location = useLocation();
@@ -18,7 +19,10 @@ export default function Home() {
   }, [location.state]);
   return (
     <>
-
+  <Helmet>
+                <meta charSet="utf-8" />
+                <title>Home</title>
+            </Helmet>
       <MainSlider />
       <CatSlider />
       <ProudctDisplay />

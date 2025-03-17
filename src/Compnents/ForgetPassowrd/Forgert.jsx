@@ -3,6 +3,7 @@ import { useFormik } from "formik";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
+import { Helmet } from 'react-helmet';
 
 export default function Forgert() {
   let [loadingSpiner, setloading] = useState(true);
@@ -62,6 +63,10 @@ export default function Forgert() {
 
   return (
     <>
+     <Helmet >
+                <meta charSet="utf-8" />
+                <title>forget Password</title>
+            </Helmet>
     
       {displayErro ? (
         <p className="bg-red-500 text-white p-2  rounded-full mt-5 text-center ">

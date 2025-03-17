@@ -3,6 +3,7 @@ import { useFormik } from "formik";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
+import { Helmet } from 'react-helmet';
 
 export default function Rigester() {
   let navigat = useNavigate()
@@ -63,6 +64,10 @@ export default function Rigester() {
 
   return (
     <>
+      <Helmet>
+                <meta charSet="utf-8" />
+                <title>sign in</title>
+            </Helmet>
     <div className="mt-10 h-[75vh] ">
       <div className="container mx-auto w-7/12  ">
        {!(rigesterFormik.isValid) && !rigesterFormik.dirty   ?  (

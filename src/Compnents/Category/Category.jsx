@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect } from "react";
 import { useState } from "react";
+import { Helmet } from 'react-helmet';
 
 export default function Category() {
   const [getCategory, setGetCategory] = useState(null);
@@ -62,6 +63,10 @@ export default function Category() {
 
   return (
     <>
+      <Helmet >
+                <meta charSet="utf-8" />
+                <title>Category</title>
+            </Helmet>
       {Loader ? (
         <div className="justify-center flex  items-center h-screen">
           <span class="loader"></span>

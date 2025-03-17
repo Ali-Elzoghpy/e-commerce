@@ -6,6 +6,7 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
 import { contextAuth } from "./../Context/AuthContextProvider";
+import { Helmet } from 'react-helmet';
 
 export default function Login() {
   let userInfo = useContext(contextAuth);
@@ -58,6 +59,10 @@ export default function Login() {
 
   return (
     <>
+      <Helmet>
+                <meta charSet="utf-8" />
+                <title>Log in</title>
+            </Helmet>
       {displayErro ? (
         <div
           class="p-4 my-4 text-center   text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"

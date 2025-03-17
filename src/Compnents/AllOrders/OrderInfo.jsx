@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { wishListContext } from "../Context/WishLIstContextProvider";
 import { toast, ToastContainer } from "react-toastify";
 import { cartContext } from "./../Context/CartContext";
+import { Helmet } from 'react-helmet';
 
 export default function OrderInfo() {
   let [getOneProudct, setGetOneProudct] = useState(null);
@@ -109,6 +110,10 @@ export default function OrderInfo() {
 
   return (
     <>
+      <Helmet>
+                <meta charSet="utf-8" />
+                <title>order Info</title>
+            </Helmet>
       {Loader ? (
         <div className="justify-center flex  items-center h-screen">
           <span class="loader"></span>

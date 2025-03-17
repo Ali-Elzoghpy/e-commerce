@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { initFlowbite } from "flowbite";
+import { Helmet } from 'react-helmet';
 
 export default function Brand() {
   const [getBrand, setgetBrand] = useState(null);
@@ -61,6 +62,11 @@ export default function Brand() {
 
   return (
     <>
+      <Helmet>
+                <meta charSet="utf-8" />
+                <title>Brands</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
       {Loader ? (
         <div className="justify-center flex  items-center h-screen">
           <span class="loader"></span>

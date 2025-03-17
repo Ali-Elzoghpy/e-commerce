@@ -4,6 +4,7 @@ import { wishListContext } from "../Context/WishLIstContextProvider";
 import { Link } from "react-router-dom";
 import { cartContext } from "../Context/CartContext";
 import { toast, ToastContainer } from "react-toastify";
+import { Helmet } from 'react-helmet';
 
 export default function Proudcts() {
   let [proudct, setProudct] = useState(null);
@@ -111,8 +112,11 @@ export default function Proudcts() {
 
   return (
      <>
-       <ToastContainer />
-       {Loader ? (
+  <Helmet>
+                <meta charSet="utf-8" />
+                <title>Proudcts</title>
+            </Helmet>
+                   {Loader ? (
          <div className="justify-center flex  items-center h-screen">
            <span class="loader"></span>
          </div>

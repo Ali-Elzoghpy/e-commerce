@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import * as yup from "yup";
+import { Helmet } from 'react-helmet';
 
 export default function Update() {
   let [loadingSpiner, setLoading] = useState(null);
@@ -58,8 +59,13 @@ export default function Update() {
 
   return (
     <>
-      <ToastContainer></ToastContainer>
-      <div className="p-5 ">
+ <Helmet >
+                <meta charSet="utf-8" />
+                <title>Update</title>
+            </Helmet>   
+            
+            
+               <div className="p-5 ">
         <div className=" mx-auto mt-11 md:w-7/12 w-12/12 m-12    ">
           <div className="bg-[#F8F9FA] p-12 shadow-2xl  rounded-3xl">
             <h1 className="text-mainColor text-3xl text-center">
