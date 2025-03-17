@@ -47,7 +47,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="bg-white shadow-md border-gray-200 dark:bg-gray-900">
+      <nav className="bg-white shadow-md border-gray-200 ">
         <div className=" md:w-10/12 w-11/12 py-4 flex flex-wrap items-center justify-between mx-auto ">
           <Link
             href="https://flowbite.com/"
