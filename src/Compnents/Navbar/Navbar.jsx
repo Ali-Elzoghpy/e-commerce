@@ -15,12 +15,12 @@ export default function Navbar() {
   const [list, setList] = useState(false);
   const [getUser, setgetUser] = useState({});
   let nav = useNavigate();
+  let getData = localStorage.getItem("")
   // console.log("ss ")
   useEffect(() => {
     let userInfo = JSON.parse(localStorage.getItem("userInfo"));
     setgetUser(userInfo);
     console.log(userInfo);
-    initFlowbite();
     getcartNumber();
     getWishNumber();
   }, []);
@@ -32,7 +32,6 @@ export default function Navbar() {
   }, [location?.state]);
 
   console.log("render");
-
 
   function mouseEnter() {
     initFlowbite();
@@ -110,8 +109,7 @@ export default function Navbar() {
             <div className=" ">
               {" "}
               <button
-                                     onClick={mouseEnter}
-
+                onClick={mouseEnter}
                 data-collapse-toggle="navbar-user"
                 type="button"
                 className="inline-flex   items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200  "

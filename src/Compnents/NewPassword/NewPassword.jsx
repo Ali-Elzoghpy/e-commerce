@@ -59,7 +59,7 @@ setFresh(true)
       ) : (
         ""
       )}
-
+<div className="h-[77.9vh]">
       <h1 className="my-5">NewPassword :</h1>
       <form action="" onSubmit={newPass.handleSubmit}>
         <div className="mb-3">
@@ -111,6 +111,7 @@ setFresh(true)
        
         </div>
       </form>
+      </div>
     </>
   );
 }

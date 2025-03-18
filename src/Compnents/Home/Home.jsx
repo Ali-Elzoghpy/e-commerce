@@ -9,14 +9,14 @@ import { Helmet } from "react-helmet";
 
 export default function Home() {
   let location = useLocation();
-  useEffect(() => {
-    if (location.state?.message) {
-      console.log(location.state?.message);
-      toast.success(location.state.message, {
-        autoClose: 3000,
-      });
-    }
-  }, [location.state]);
+  // useEffect(() => {
+  //   if (location.state?.message) {
+  //     console.log(location.state?.message);
+  //     toast.success(location.state.message, {
+  //       autoClose: 3000,
+  //     });
+  //   }
+  // }, [location.state]);
   return (
     <>
   <Helmet>

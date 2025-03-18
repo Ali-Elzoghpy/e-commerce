@@ -39,9 +39,9 @@ export default function Profile() {
   return (
     <>
       <Helmet>
-                <meta charSet="utf-8" />
-                <title>Profile</title>
-            </Helmet>
+        <meta charSet="utf-8" />
+        <title>Profile</title>
+      </Helmet>
       {Loader ? (
         <div className="justify-center flex  items-center h-screen">
           <span class="loader"></span>
@@ -57,10 +57,7 @@ export default function Profile() {
                   My Profile{" "}
                 </h1>
                 <div className="mb-4">
-                  <label htmlFor="userName" >
-                    {" "}
-                    User Name:
-                  </label>
+                  <label htmlFor="userName"> User Name:</label>
                   <br />
                   <input
                     disabled
@@ -71,9 +68,7 @@ export default function Profile() {
                   />
                 </div>
                 <div className="mb-4">
-                  <label htmlFor="userName" >
-                    User Email:
-                  </label>
+                  <label htmlFor="userName">User Email:</label>
                   <br />
                   <input
                     disabled
@@ -84,10 +79,7 @@ export default function Profile() {
                   />
                 </div>
                 <div className="mb-4">
-                  <label htmlFor="userName" >
-                    {" "}
-                    User Phone:
-                  </label>
+                  <label htmlFor="userName"> User Phone:</label>
                   <br />
                   <input
                     disabled
@@ -103,14 +95,14 @@ export default function Profile() {
                     className="px-4 py-2 text-white bg-mainColor rounded-md"
                   >
                     {" "}
-                    Update Date <i class="fa-solid md:block hidden fa-pen"></i>
+                    Update Date 
                   </Link>
                   <Link
                     to="change-password"
                     className="px-4 py-2 text-white bg-mainColor rounded-md"
                   >
                     {" "}
-                    Change Password <i class="fa-solid md:block hidden fa-key"></i>
+                    Change Password{" "}
                   </Link>
                 </div>
               </div>

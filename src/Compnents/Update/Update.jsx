@@ -1,13 +1,15 @@
 import axios from "axios";
 import { useFormik } from "formik";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import * as yup from "yup";
-import { Helmet } from 'react-helmet';
+import { Helmet } from "react-helmet";
+import { contextAuth } from "./../Context/AuthContextProvider";
 
 export default function Update() {
   let [loadingSpiner, setLoading] = useState(null);
+  let { setToken } = useContext(contextAuth);
 
   let navigate = useNavigate();
   const baseUrl = "https://ecommerce.routemisr.com";
@@ -45,9 +47,12 @@ export default function Update() {
         headers: header,
       })
       .then((res) => {
-        console.log(res.data.message);
-        toast.success(res.data.message);
-        navigate("/");
+        console.log(res.data);
+        toast.success("your data has been updated login again");
+        localStorage.removeItem("token");
+
+        setToken(null);
+        navigate("/login");
       })
       .catch((res) => {
         toast.error("make sure to enter new data");
@@ -59,13 +64,12 @@ export default function Update() {
 
   return (
     <>
- <Helmet >
-                <meta charSet="utf-8" />
-                <title>Update</title>
-            </Helmet>   
-            
-            
-               <div className="p-5 ">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Update</title>
+      </Helmet>
+
+      <div className="p-5 ">
         <div className=" mx-auto mt-11 md:w-7/12 w-12/12 m-12    ">
           <div className="bg-[#F8F9FA] p-12 shadow-2xl  rounded-3xl">
             <h1 className="text-mainColor text-3xl text-center">

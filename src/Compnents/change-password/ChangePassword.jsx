@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import * as yup from "yup";
 import { contextAuth } from "./../Context/AuthContextProvider";
-import { Helmet } from 'react-helmet';
+import { Helmet } from "react-helmet";
 export default function ChangePassword() {
   let [loadingSpiner, setLoading] = useState(null);
   let { setToken } = useContext(contextAuth);
@@ -65,11 +65,11 @@ export default function ChangePassword() {
   }
   return (
     <>
-  <Helmet>
-                <meta charSet="utf-8" />
-                <title>change Pass</title>
-                <link rel="canonical" href="http://mysite.com/example" />
-            </Helmet>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>change Pass</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       <div className="m-auto p-5 md:w-7/12 w-12/12   mt-12">
         <div className="bg-[#F8F9FA] p-12 shadow-2xl  rounded-3xl">
           <h1 className="text-mainColor text-3xl text-center">
