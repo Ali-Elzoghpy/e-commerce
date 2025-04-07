@@ -52,7 +52,10 @@ export default function OrderDeatls() {
       ) : (
         <div
           className={`bg-[#F8F9FA] ${
-            getOrderDeatls[0]?.cartItems.length ==2 ||   getOrderDeatls[0]?.cartItems.length ==1  ? `h-screen` : ``
+            getOrderDeatls[0]?.cartItems.length == 2 ||
+            getOrderDeatls[0]?.cartItems.length == 1
+              ? `h-screen`
+              : ``
           } md:p-16 p-5 shadow-md rounded-3xl mt-10`}
         >
           <div className="row  flex-row justify-between ">

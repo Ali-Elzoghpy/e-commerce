@@ -15,7 +15,6 @@ export default function Navbar() {
   const [list, setList] = useState(false);
   const [getUser, setgetUser] = useState({});
   let nav = useNavigate();
-  let getData = localStorage.getItem("")
   // console.log("ss ")
   useEffect(() => {
     let userInfo = JSON.parse(localStorage.getItem("userInfo"));

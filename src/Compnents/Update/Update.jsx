@@ -70,14 +70,14 @@ export default function Update() {
       </Helmet>
 
       <div className="p-5 ">
-        <div className=" mx-auto mt-11 md:w-7/12 w-12/12 m-12    ">
+        <div className=" mx-auto mt-11 md:w-7/12 w-12/12 m-12     ">
           <div className="bg-[#F8F9FA] p-12 shadow-2xl  rounded-3xl">
             <h1 className="text-mainColor text-3xl text-center">
               Update your data{" "}
             </h1>
             <form onSubmit={updateFormik.handleSubmit}>
               <div className="mb-4">
-                <label htmlFor="userName" className="m">
+                <label htmlFor="userName" className="">
                   {" "}
                   Name:
                 </label>

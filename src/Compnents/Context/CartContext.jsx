@@ -20,7 +20,7 @@ export default function CartContextProvider(props) {
     });
   }
   function getCartData() {
-    return axios.get(baseUrl, {
+    return axios.get(baseUrl, { 
       headers: header,
     });
   }
